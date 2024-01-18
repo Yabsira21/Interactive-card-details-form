@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(images/bg-main-desktop.png) no-repeat;
+
+  font-size: 18px;
+  text-transform: uppercase;
+  height: 100vh;
+}
+
+body,
+input,
+button {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+main {
+  max-width: max(70rem, 75%);
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  width: 27.93rem;
+  height: 15.3125rem;
+  box-shadow: 2rem 3rem 2rem rgba(128, 128, 128, 0.125);
+}
+
+.card-front {
+  background: url(images/bg-card-front.png);
+  margin: 11.75rem 0 2.25rem 0.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1.75rem 2rem 1.5rem;
+  color: white;
+}
+
+.card-front-logo {
+  margin-bottom: auto;
+}
+
+.credit-num {
+  font-size: 1.7rem;
+  letter-spacing: 0.2rem;
+  word-spacing: 0.3rem;
+}
+
+.personal-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  margin-top: 1.5rem;
+}
+
+.card-back {
+  background: url(images/bg-card-back.png);
+  margin: 0 0 0 6.15rem;
+  position: relative;
+}
+
+.card-back span {
+  position: absolute;
+  right: 13.25%;
+  top: 45%;
+  font-size: 1rem;
+  color: white;
+}
+
+.form {
+  margin-left: 8rem;
+  width: 23.75rem;
+  /* margin: auto 0 auto 8rem; */
+  margin-top: 16.75rem;
+  animation: appear 1s;
+}
+
+form {
+  /* background-color: blue;
+  color: red; */
+  display: flex;
+  flex-direction: column;
+}
+
+.cvc-info {
+  display: flex;
+  align-items: flex-start;
+}
+.cvc-info--date {
+  width: 50%;
+}
+
+.cvc-info--cvc {
+  width: 50%;
+}
+
+label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+  margin: 0.5rem 0;
+}
+
+input {
+  padding: 0.6rem 0.8rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  margin-bottom: 1.35rem;
+  border: 1px solid hsl(270, 3%, 87%);
+  outline: none;
+}
+
+.exp {
+  display: block;
+  margin-top: 0.25rem;
+  margin-bottom: 0.45rem;
+}
+.mm,
+.yy {
+  width: 5rem;
+  margin-right: 0.25rem;
+  padding: 0.75rem 0.6rem 0.6em 0.9rem;
+}
+
+.cvc-info--cvc input {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+}
+
+.confirm {
+  margin-top: 1.1rem;
+  font-size: 1.15rem;
+  padding: 0.8rem 0;
+  border-radius: 0.5rem;
+  background-color: hsl(278, 68%, 11%);
+  color: white;
+  font-weight: 700;
+}
+
+input::placeholder {
+  color: hsl(280, 8%, 65%);
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2.25rem;
+}
+
+.success img {
+  margin-bottom: 2.25rem;
+}
+
+.success h1 {
+  letter-spacing: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.success p {
+  font-size: 1.15rem;
+  text-transform: lowercase;
+  margin-bottom: 2rem;
+}
+
+.success button {
+  width: 100%;
+}
+
+/* FOR JS */
+.error-msg {
+  text-transform: error capitalize;
+  font-size: 0.75rem;
+  transform: translateY(-0.85rem);
+  color: red;
+  font-weight: 700;
+}
+
+.error--border {
+  border: 1px solid red;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  main {
+    width: 100%;
+  }
+  .form {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    background-size: 100%;
+    background-position: 50% -232%;
+  }
+  .card {
+    width: 17.85rem;
+    height: 9.75rem;
+    border-radius: 0.5rem;
+  }
+  .card-front {
+    margin: 7.95rem 1rem 0;
+    padding: 1rem 1.25rem 1.5rem;
+  }
+  .card-front-logo {
+    width: 3.5rem;
+  }
+  .credit-num {
+    font-size: 1.025rem;
+    word-spacing: 0.125rem;
+    letter-spacing: 0.15rem;
+  }
+  .personal-info {
+    margin-top: 0.95rem;
+    font-size: 0.5rem;
+  }
+  .card-back {
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    z-index: -1;
+    background-size: cover;
+  }
+  main {
+    height: auto;
+  }
+  main {
+    flex-direction: column;
+  }
+  .form {
+    width: 90%;
+    margin: 2rem auto;
+  }
+  .mm,
+  .yy {
+    width: 4rem;
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

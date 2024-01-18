@@ -2,6 +2,8 @@ let cardNum = document.querySelector(".card-num");
 
 let submitBtn = document.querySelector(".form-submit");
 
+let pName = document.querySelector(".pName");
+
 let err = document.querySelectorAll(".error-msg");
 
 let month = document.querySelector(".mm");
@@ -39,6 +41,8 @@ function valueChecker(target, num, addOrRemove) {
     document.querySelectorAll(".error-msg")[num].classList.add("hidden");
   }
 }
+
+let word;
 
 cardNum.addEventListener("input", function (e) {
   valueChecker(cardNum, 0, "remove");
@@ -99,6 +103,11 @@ submitBtn.addEventListener("click", function (e) {
   if (allErrorChecker(err)) {
     document.querySelector(".form").classList.add("hidden");
     document.querySelector(".success").classList.remove("hidden");
+    document.querySelector(".credit-num").textContent = word;
+    document.querySelector(".person-name").textContent = pName.value;
+    document.querySelector(".month-exp").textContent = month.value;
+    document.querySelector(".year-exp").textContent = year.value;
+    document.querySelector(".cvc-pass").textContent = cvc.value;
   }
 });
 
